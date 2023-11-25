@@ -1,0 +1,18 @@
+label{
+  font-size: 24px;
+  font-family:"Angsana New" ;
+
+}
+
+.bg-custom {
+
+  background: url('../assets/IMG_008.PNG');
+ height: 900px;
+  background-repeat:repeat-y;
+
+}
+.font{
+  font-size: medium;
+
+}
+

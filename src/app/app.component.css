@@ -1,18 +1,25 @@
-label{
-  font-size: 24px;
-  font-family:"Angsana New" ;
+.label{
+  font-size: 35px;
+  font-family:"AngsanaUPC";
+  color: #cc0b0b;
 
 }
 
 .bg-custom {
 
   background: url('../assets/IMG_008.PNG');
- height: 900px;
-  background-repeat:repeat-y;
+  height: 300px;
+  background-repeat:no-repeat;
 
 }
-.font{
-  font-size: medium;
-
+.custom-font{
+  font-size: 34px;
+  font-family: "bolder";
 }
+.bav{
 
+  background-color: rgba(192, 69, 69, 0.72);
+}
+.text{
+  width: 300px;
+}

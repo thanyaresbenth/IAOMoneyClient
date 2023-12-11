@@ -2,18 +2,19 @@
 <div class="custom">
   <div class="custom-card">
     <label>ชื่อสินค้า : </label>
-    <input/>
+    <input type="text " [(ngModel)]="itemName">
   <div class="custom-card">
     <label>ราคา : </label>
-    <input/>
+    <input type="text " [(ngModel)]="amount"/>
     </div>
   <div class="custom-card">
     <label>ประเภท : </label>
-    <input/>
+    <input type="text " [(ngModel)]="itemType"/>
   </div>
-  <button class="custom-button">save</button>
+  <button (click)=onClick() class="custom-button">save</button>
   </div>
 </div>
+
 <div class="custom-table">
 <table style="width: 75% ">
   <tr>

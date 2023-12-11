@@ -17,6 +17,7 @@ export class HomeComponent {
   }
 
     personId:number=1;
+    walletId?:number;
     onClick(){
       let url= "http://localhost:8080/wallet/create-wallet";
       let person: PersonRequest={
@@ -32,7 +33,7 @@ export class HomeComponent {
 
       console.log(person)
       this.httpClient.post(url,person,httpOptions).subscribe(x =>{
-        console.log(x);
+        this.walletId= parseInt(x.toString());
       });
 
     }

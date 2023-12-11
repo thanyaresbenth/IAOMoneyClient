@@ -34,7 +34,9 @@ export class CreateItemComponent {
       headers: headers
     };
     console.log(item)
-    this.httpClient.post(url,item,httpOptions).subscribe(x=> {})
+    this.httpClient.post(url,item,httpOptions).subscribe(x=> {
+      alert("sucess")
+    })
   }
 
 

@@ -52,7 +52,7 @@ export class CreateItemComponent {
 
   this.httpClient.get<Array<itemRequest>>("http://localhost:8080/item/find-all").subscribe(x=>{
       this.arrayItemResponse=x;
-      console.log(this.arrayItemResponse)
+      this.findAll();
     })
 
   }

@@ -16,7 +16,7 @@ export class HomeComponent {
   constructor(protected httpClient:HttpClient) {
   }
 
-    personId:number=1;
+    personId?:number;
     walletId?:number;
     onClick(){
       let url= "http://localhost:8080/wallet/create-wallet";

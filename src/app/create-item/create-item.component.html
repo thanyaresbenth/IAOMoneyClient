@@ -15,18 +15,27 @@
   </div>
 </div>
 
-<div class="custom-table">
+<div  class="custom-table">
 <table style="width: 75% ">
   <tr>
     <th>ชื้อสินค้า</th>
     <th>ราคา</th>
     <th>ประเภท</th>
   </tr>
-  <tr>
-    <td>cafe</td>
-    <td>100</td>
-    <td>รายจ่าย</td>
+  <tr *ngFor= " let item of arrayItemResponse">
+    <td>{{item.itemName}}</td>
+    <td>{{item.amount}}</td>
+    <td>
+      <p *ngIf ="item.itemType?.trim()=='o'">expenses</p>
+      <p *ngIf ="item.itemType?.trim()=='i'">income</p>
+    </td>
   </tr>
 </table>
+</div>
+  <div  class="custom-table">
+    <table style="width: 25% ">
+      <tr>
+        <th>คงเหลือ</th>
+        <th>.bath</th>
 
 

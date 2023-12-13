@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {itemRequest} from "../models/item_Request";
 import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
+
+
+
+
 
 
 @Component({
@@ -13,11 +17,12 @@ import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
   styleUrl: './create-item.component.css'
 })
 export class CreateItemComponent {
-  constructor(protected  httpClient:HttpClient) {
+  constructor(public  httpClient:HttpClient) {
   }
   itemName? : string =" ";
   itemType? : string =" ";
   amount? : number ;
+  arrayItemResponse : itemRequest[]=[];
 
   onClick(){
     let url= "http://localhost:8080/item/createItem";
@@ -34,10 +39,26 @@ export class CreateItemComponent {
       headers: headers
     };
     console.log(item)
-    this.httpClient.post(url,item,httpOptions).subscribe(x=> {
-      alert("sucess")
-    })
+    this.httpClient.post(url,item,httpOptions).subscribe(x=> {})
   }
 
+  findAll(){
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    const httpOptions = {
+      headers: headers
+    };
+
+  this.httpClient.get<Array<itemRequest>>("http://localhost:8080/item/find-all").subscribe(x=>{
+      this.arrayItemResponse=x;
+      console.log(this.arrayItemResponse)
+    })
+
+  }
+
+  ngOnInit(): void {
+    this.findAll()
+  }
 
 }
